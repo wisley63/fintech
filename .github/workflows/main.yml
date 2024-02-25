@@ -1,31 +1,29 @@
 name: Foundry Testing
-run-name: Homework 0 Running by ${{ github.actor }} 
-
 on:
   push:
     branches:
       - "**"
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref_name }}
+  group: "Foundry Testing-${{ github.ref }}"
   cancel-in-progress: true
 
 env:
   FOUNDRY_PROFILE: ci
-  WORKFLOW_NAME: Foundry Test on ${{ github.ref_name }}
+  WORKFLOW_NAME: Foundry Test on ${{ github.ref }}
 
 jobs:
   check:
     strategy:
       fail-fast: true
 
-    name: Foundry Testing
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
         with:
           submodules: recursive
-          token: ${{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 }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
@@ -37,12 +35,8 @@ jobs:
           cd hw0
           forge --version
           forge build --sizes
-        id: build
 
       - name: Run Forge tests
         run: |
           cd hw0
           forge test -vvv
-        id: test
-        name: My Workflow
-
