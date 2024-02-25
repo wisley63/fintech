@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{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 }}
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
@@ -44,3 +44,5 @@ jobs:
           cd hw0
           forge test -vvv
         id: test
+        name: My Workflow
+
