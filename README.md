@@ -13,4 +13,5 @@ All the detailed specified in Homework 0 documentation.
 0xCFBbD691e207659CD0aa5aFba8A3a2897eE7F6bD 
 
 ## Sepolia Etherscan
-![image](https://github.com/wisley63/fintech/assets/113053224/29132887-b96a-4c84-a197-2644bc65cdcf)
+<img width="960" alt="image" src="https://github.com/wisley63/fintech/assets/113053224/d3c23851-0daa-4462-8f8a-3b85c6464c1f">
+
